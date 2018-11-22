@@ -1,8 +1,8 @@
 {
-  "name": "spotify-wrapper",
+  "name": "easy-spotify",
   "version": "0.0.1",
   "description": "A spotify web api wrapper library.",
-  "main": "src/index.js",
+  "main": "lib/index.js",
   "scripts": {
     "clear": "rimraf lib",
     "build": "npm run clear && ./node_modules/.bin/babel --out-dir lib src",
@@ -27,14 +27,15 @@
   "keywords": [
     "js",
     "tdd",
-    "library"
+    "library",
+    "spotify"
   ],
   "author": "Bruno Lombardi <djfrizer1@gmail.com> (https://brunolombardi.me/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/willianjusten/js-tdd-course/issues"
+    "url": "https://github.com/bruno-lombardi/easy-spotify/issues"
   },
-  "homepage": "https://github.com/willianjusten/js-tdd-course#readme",
+  "homepage": "https://github.com/bruno-lombardi/easy-spotify#readme",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-loader": "^7.1.5",

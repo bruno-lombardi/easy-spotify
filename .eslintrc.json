@@ -1,5 +1,14 @@
 {
-    "plugins": [
-        "import"
-    ]
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module"
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "rules": {
+    "semi": ["warn", "never"],
+    "quotes": ["warn", "single"]
+  }
 }
