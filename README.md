@@ -1,11 +1,11 @@
 # EasySpotify - A Spotify JavaScript Wrapper
-## Attention, this library is not working right now, it's currently in development
+## This library is currently in development, more features will be added
 
-This is a JavaScript library that wraps around (Spotify Web Api)[https://developer.spotify.com/documentation/web-api/] to make your life easier.
+This is a JavaScript library that wraps around [Spotify Web Api](https://developer.spotify.com/documentation/web-api/) to make your life easier.
 
 ## Browser Support
 
-This library relies on [Fetch API](https://fetch.spec.whatwg.org/). And this API is supported in the following browsers:
+This library relies on [Fetch API](https://fetch.spec.whatwg.org/), which is supported in the following browsers:
 
 ![Chrome](https://github.com/alrra/browser-logos/raw/master/src/chrome/chrome_128x128.png) | ![Firefox](https://github.com/alrra/browser-logos/raw/master/src/firefox/firefox_128x128.png) | ![Opera](https://github.com/alrra/browser-logos/raw/master/src/opera/opera_128x128.png) | ![Safari](https://github.com/alrra/browser-logos/raw/master/src/safari/safari_128x128.png) | ![IE](https://cloud.githubusercontent.com/assets/398893/3528325/20373e76-078e-11e4-8e3a-1cb86cf506f0.png) | ![Edge](https://github.com/alrra/browser-logos/raw/master/src/edge/edge_128x128.png) | ![iOSSafari](https://github.com/alrra/browser-logos/raw/master/src/safari-ios/safari-ios_128x128.png) |
 --- | --- | --- | --- | --- | --- | --- |
@@ -15,24 +15,91 @@ For more detailed support, [see caniuse.com](https://caniuse.com/#feat=fetch)
 
 ## Dependencies
 
-This library depends on [fetch](https://fetch.spec.whatwg.org/) to make requests. For environments that don't support fetch, you'll need to provide a [browser polyfill](https://github.com/github/fetch) or [NodeJS polyfill](https://github.com/bitinn/node-fetch), depending on what you want.
+This library depends on [fetch](https://fetch.spec.whatwg.org/) to make requests. For environments that don't support fetch, like NodeJS or old browser, you'll need to provide a [browser polyfill](https://github.com/github/fetch) or a [NodeJS polyfill](https://github.com/bitinn/node-fetch).
 
 ### Installing for NodeJS
 
-First install the polyfill with `$ npm install node-fetch --save`. This library is not avaible in npm as of now, it is still in development. But you can use it by downloading and including the lib folder.
+First install the polyfill with `npm install node-fetch --save`. EasySpotify library will be avaible soon in NPM. I am just finishing some things. To install library use `npm install easy-spotify --save`.
 
 ### Installing for browser
 
-Please refer to the [browser polyfill](https://github.com/github/fetch) and download and include it in your scripts. Remember this is only a polyfill, you don't need if you don't want to support old browsers. Then download either the [default](https://raw.githubusercontent.com/bruno-lombardi/easy-spotify/master/dist/spotify-wrapper.umd.js) or minified version.
+Please refer to the [browser polyfill](https://github.com/github/fetch) and download and include it in your scripts. Remember this is only a polyfill, you don't need if you don't want to support old browsers. Then download either the [default](https://raw.githubusercontent.com/bruno-lombardi/easy-spotify/master/dist/easy-spotify.umd.js) or [minified](https://raw.githubusercontent.com/bruno-lombardi/easy-spotify/master/dist/easy-spotify.umd.min.js) version.
 
 ## How to use
 
-More details soon... big sorry!
+### ES6
+
+```js
+// import the library
+import EasySpotify from 'easy-spotify';
+
+const spotify = new EasySpotify({
+  token: 'your-token-here'
+});
+
+// search for artists
+spotify.searchArtists('Incubus').then(data => {
+  // do something with the data
+});
+```
+
+### CommonJS
+
+```js
+const EasySpotify = require('easy-spotify');
+
+const spotify = new EasySpotify({});
+// do something to get a token
+spotify.setToken(token);
+
+// do custom search
+spotify.search('track', 'The Beatles').then(data => {
+  // do somethin with the data
+});
+```
+
+### Browser
+Import the script
+
+```html
+<!-- import default version -->
+<script src="spotify-wrapper.umd.js"></script>
+<!-- import minified version -->
+<script src="easy-spotify.umd.min.js"></script>
+```
+
+```js
+const spotify = new EasySpotify({});
+// do something to get a token
+spotify.setToken(token);
+
+// get an album
+spotify.getAlbum('album-id').then(data => {
+  // do somethin with the data
+});
+```
+
+## Methods
+
+This library is still in development (as the documentation), but you can see every method if you use VSCode or other text editor that supports JSDoc.
 
 ## Built With
 
-* Webpack
-* VSCode
+* [Webpack](https://webpack.js.org/)
+* [VSCode](https://code.visualstudio.com/)
+
+## Ideas to Implement
+- [ ] Add configurations to paginate some requests, like getAlbums, search, searchTracks
+- [ ] Support Artists endpoints
+- [ ] Support Browse endpoints
+- [ ] Support Follow endpoints
+- [ ] Support Library endpoints
+- [ ] Support Personalization endpoints
+- [ ] Support Player endpoints
+- [ ] Support Playlists endpoints
+- [ ] Support Tracks endpoints
+- [ ] Support User Profiles endpoints
+- [ ] Find a way to get a OAuth token (don't think that is possible with js only)
 
 ## Authors
 

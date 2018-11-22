@@ -1,11 +1,11 @@
 import { join } from 'path'
 
 export default {
-  entry: './src/index',
+  entry: './index',
   output: {
     path: join(__dirname, 'dist'),
     libraryTarget: 'umd',
-    library: 'spotifyWrapper'
+    library: 'EasySpotify'
   },
   devtool: 'source-map',
   module: {

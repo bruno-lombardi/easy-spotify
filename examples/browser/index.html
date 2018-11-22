@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Easy Spotify Example</title>
+  </head>
+  <body>
+    <div id="album"></div>
+    <div id="tracks"></div>
+  </body>
+  <!-- <script src="../../dist/easy-spotify.umd.js"></script> default version -->
+  <script src="../../dist/easy-spotify.umd.min.js"></script>
+  <script>
+    var spotify = new EasySpotify({
+      token:
+        'your-oauth-token-here'
+    })
+
+    var albumsElement = document.getElementById('album')
+    var tracksElement = document.getElementById('tracks')
+    // pass the album id
+    spotify.getAlbum('382ObEPsp2rxGrnsizN5TX').then(data => {
+      var images = data.images
+        .map(
+          image =>
+            `<img src="${image.url}" width=${image.width} height=${
+              image.hieght
+            }/>`
+        )
+        .join('')
+
+      var tracks = data.tracks.items.map(
+        track => `
+          <p>${track.name}</p>
+          <audio controls>
+            <source src="${track.preview_url}" type="audio/mpeg">
+          </audio>
+          `
+      )
+
+      albumsElement.innerHTML = images
+      tracksElement.innerHTML = tracks
+    })
+  </script>
+</html>
