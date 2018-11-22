@@ -1,4 +1,5 @@
 # EasySpotify - A Spotify JavaScript Wrapper
+## Attention, this library is not working right now, it's currently in development
 
 This is a JavaScript library that wraps around (Spotify Web Api)[https://developer.spotify.com/documentation/web-api/] to make your life easier.
 
@@ -18,11 +19,11 @@ This library depends on [fetch](https://fetch.spec.whatwg.org/) to make requests
 
 ### Installing for NodeJS
 
-First install the polyfill with `sh $ npm install node-fetch --save`, then install the library with `sh $ npm install easy-spotify --save`. You are then ready to use it.
+First install the polyfill with `$ npm install node-fetch --save`. This library is not avaible in npm as of now, it is still in development. But you can use it by downloading and including the lib folder.
 
 ### Installing for browser
 
-Please refer to the [browser polyfill](https://github.com/github/fetch) and download and include it in your scripts. Remember this is only a polyfill, you don't need if you don't want to support old browsers. 
+Please refer to the [browser polyfill](https://github.com/github/fetch) and download and include it in your scripts. Remember this is only a polyfill, you don't need if you don't want to support old browsers. Then download either the [default](https://raw.githubusercontent.com/bruno-lombardi/easy-spotify/master/dist/spotify-wrapper.umd.js) or minified version.
 
 ## How to use
 
@@ -35,7 +36,7 @@ More details soon... big sorry!
 
 ## Authors
 
-| ![Bruno Lombardi](https://avatars2.githubusercontent.com/u/7153294?s=460&v=4)|
+| ![Bruno Lombardi](https://avatars2.githubusercontent.com/u/7153294?s=150&v=4)|
 |:---------------------:|
 |  [Bruno Lombardi](https://github.com/bruno-lombardi)   |
 
