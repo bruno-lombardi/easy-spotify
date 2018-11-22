@@ -7,7 +7,7 @@ This is a JavaScript library that wraps around [Spotify Web Api](https://develop
 
 This library relies on [Fetch API](https://fetch.spec.whatwg.org/), which is supported in the following browsers:
 
-![Chrome](https://github.com/alrra/browser-logos/raw/master/src/chrome/chrome_128x128.png) | ![Firefox](https://github.com/alrra/browser-logos/raw/master/src/firefox/firefox_128x128.png) | ![Opera](https://github.com/alrra/browser-logos/raw/master/src/opera/opera_128x128.png) | ![Safari](https://github.com/alrra/browser-logos/raw/master/src/safari/safari_128x128.png) | ![IE](https://cloud.githubusercontent.com/assets/398893/3528325/20373e76-078e-11e4-8e3a-1cb86cf506f0.png) | ![Edge](https://github.com/alrra/browser-logos/raw/master/src/edge/edge_128x128.png) | ![iOSSafari](https://github.com/alrra/browser-logos/raw/master/src/safari-ios/safari-ios_128x128.png) |
+![Chrome](https://github.com/alrra/browser-logos/raw/master/src/chrome/chrome_48x48.png) | ![Firefox](https://github.com/alrra/browser-logos/raw/master/src/firefox/firefox_48x48.png) | ![Opera](https://github.com/alrra/browser-logos/raw/master/src/opera/opera_48x48.png) | ![Safari](https://github.com/alrra/browser-logos/raw/master/src/safari/safari_48x48.png) | ![IE](https://cloud.githubusercontent.com/assets/398893/3528325/20373e76-078e-11e4-8e3a-1cb86cf506f0.png) | ![Edge](https://github.com/alrra/browser-logos/raw/master/src/edge/edge_48x48.png) | ![iOSSafari](https://github.com/alrra/browser-logos/raw/master/src/safari-ios/safari-ios_48x48.png) |
 --- | --- | --- | --- | --- | --- | --- |
 42+ ✔ | 40+ ✔ | 29+ ✔ | 10.1+ ✔ | Nope ✘ | 14+ ✔ | 10.3+ ✔ |
 
@@ -64,8 +64,8 @@ Import the script
 ```html
 <!-- import default version -->
 <script src="spotify-wrapper.umd.js"></script>
-<!-- import minified version -->
-<script src="easy-spotify.umd.min.js"></script>
+<!-- or import minified version -->
+<!-- <script src="easy-spotify.umd.min.js"></script> -->
 ```
 
 ```js
