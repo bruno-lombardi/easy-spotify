@@ -1,7 +1,9 @@
 # EasySpotify - A Spotify JavaScript Wrapper
 ## This library is currently in development, more features will be added
 
-This is a JavaScript library that wraps around [Spotify Web Api](https://developer.spotify.com/documentation/web-api/) to make your life easier.
+[![Build Status](https://travis-ci.org/bruno-lombardi/easy-spotify.svg?branch=master)](https://travis-ci.org/bruno-lombardi/easy-spotify)
+
+This is a JavaScript library that wraps [Spotify Web Api](https://developer.spotify.com/documentation/web-api/) to make your life easier.
 
 ## Browser Support
 
