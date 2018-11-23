@@ -67,6 +67,7 @@ To see examples, refer to the [examples folder](https://github.com/bruno-lombard
 | Endpoint | https://api.spotify.com/v1/albums/{id} |
 
 **Arguments**
+
 | Argument | Type | Example |
 | --- | --- | --- |
 | `id` | *string* | `'4aawyAB9vmqN3uQ7FjRGTy'` |
@@ -86,6 +87,7 @@ spotify.getAlbum('4aawyAB9vmqN3uQ7FjRGTy').then(data => {
 | Endpoint | https://api.spotify.com/v1/albums?ids={ids} |
 
 **Arguments**
+
 | Argument | Type | Example |
 | --- | --- | --- |
 | `ids` | *Array(string)* | `['382ObEPsp2rxGrnsizN5TX','1A2GTWGtFfWp7KSQTwWOyo']` |
@@ -105,6 +107,7 @@ spotify.getAlbums(['382ObEPsp2rxGrnsizN5TX','1A2GTWGtFfWp7KSQTwWOyo']).then(data
 | Endpoint | https://api.spotify.com/v1/albums/{id}/tracks |
 
 **Arguments**
+
 | Argument | Type | Example |
 | --- | --- | --- |
 | `id` | *string* | `'382ObEPsp2rxGrnsizN5TX'` |
