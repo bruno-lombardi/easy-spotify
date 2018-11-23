@@ -63,8 +63,8 @@ To see examples, refer to the [examples folder](https://github.com/bruno-lombard
 
 | | |
 | ---| --- |
-| Description | Get an album with provided id |
-| Endpoint | https://api.spotify.com/v1/albums/{id} |
+| **Description** | Get an album with provided id |
+| **Endpoint** | https://api.spotify.com/v1/albums/{id} |
 
 **Arguments**
 
@@ -83,8 +83,8 @@ spotify.getAlbum('4aawyAB9vmqN3uQ7FjRGTy').then(data => {
 
 | | |
 | --- | --- |
-| Description | Get albums with provided ids |
-| Endpoint | https://api.spotify.com/v1/albums?ids={ids} |
+| **Description** | Get albums with provided ids |
+| **Endpoint** | https://api.spotify.com/v1/albums?ids={ids} |
 
 **Arguments**
 
@@ -103,8 +103,8 @@ spotify.getAlbums(['382ObEPsp2rxGrnsizN5TX','1A2GTWGtFfWp7KSQTwWOyo']).then(data
 
 | | |
 | --- | --- |
-| Description | Get album tracks with provided id |
-| Endpoint | https://api.spotify.com/v1/albums/{id}/tracks |
+| **Description** | Get album tracks with provided id |
+| **Endpoint** | https://api.spotify.com/v1/albums/{id}/tracks |
 
 **Arguments**
 
@@ -118,6 +118,33 @@ spotify.getAlbumTracks('382ObEPsp2rxGrnsizN5TX').then(data => {
   // do something
 })
 ```
+
+### search(query, type)
+
+| | |
+| --- | --- |
+| **Description** | Generic search information with provided query and type |
+| **Endpoint** | https://api.spotify.com/v1/search?q={query}&type={type} |
+
+**Arguments**
+
+| Argument | Type | Example |
+| --- | --- | --- |
+| `query` | *string* | `'Bruno Mars'` |
+| `type` | *string* | `'album'`, `'artist'`, `'playlist'`, `'track'` |
+
+**Code Example**
+```js
+spotify.search('Bruno Mars', 'artist').then(data => {
+  // do something
+})
+
+spotify.search('Never Let Me Go', 'track').then(data => {
+  // do something
+})
+```
+
+
 
 ## Features to implement
 - [ ] Add configurations to paginate some requests, like getAlbums, search, searchTracks
