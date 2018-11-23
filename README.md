@@ -1,9 +1,8 @@
-# EasySpotify - A Spotify JavaScript Wrapper
-## This library is currently in development, more features will be added
+# EasySpotify - A Spotify Web Api JS Wrapper
 
 [![Build Status](https://travis-ci.org/bruno-lombardi/easy-spotify.svg?branch=master)](https://travis-ci.org/bruno-lombardi/easy-spotify)
 
-This is a JavaScript library that wraps [Spotify Web Api](https://developer.spotify.com/documentation/web-api/) to make your life easier.
+This is a JavaScript library that wraps [Spotify Web API](https://developer.spotify.com/documentation/web-api/) to make your life easier.
 
 ## Browser Support
 
@@ -13,84 +12,59 @@ This library relies on [Fetch API](https://fetch.spec.whatwg.org/), which is sup
 --- | --- | --- | --- | --- | --- | --- |
 42+ ✔ | 40+ ✔ | 29+ ✔ | 10.1+ ✔ | Nope ✘ | 14+ ✔ | 10.3+ ✔ |
 
-For more detailed support, [see caniuse.com](https://caniuse.com/#feat=fetch)
+For more detailed information, [see caniuse.com](https://caniuse.com/#feat=fetch).
 
-## Dependencies
+## Installation and Usage
+This library depends on [fetch](https://fetch.spec.whatwg.org/) to make requests. For environments that don't support fetch, like NodeJS or older browser, you'll need to provide a polyfill.
 
-This library depends on [fetch](https://fetch.spec.whatwg.org/) to make requests. For environments that don't support fetch, like NodeJS or old browser, you'll need to provide a [browser polyfill](https://github.com/github/fetch) or a [NodeJS polyfill](https://github.com/bitinn/node-fetch).
+### NodeJS
 
-### Installing for NodeJS
+Install both [node-fetch polyfill](https://github.com/bitinn/node-fetch) and [easy-spotify](https://www.npmjs.com/package/easy-spotify): 
 
-First install the polyfill with `npm install node-fetch --save`. EasySpotify library will be avaible soon in NPM. I am just finishing some things. To install library use `npm install easy-spotify --save`.
-
-### Installing for browser
-
-Please refer to the [browser polyfill](https://github.com/github/fetch) and download and include it in your scripts. Remember this is only a polyfill, you don't need if you don't want to support old browsers. Then download either the [default](https://raw.githubusercontent.com/bruno-lombardi/easy-spotify/master/dist/easy-spotify.umd.js) or [minified](https://raw.githubusercontent.com/bruno-lombardi/easy-spotify/master/dist/easy-spotify.umd.min.js) version.
-
-## How to use
-
-### ES6
-
-```js
-// import the library
-import EasySpotify from 'easy-spotify';
-
-const spotify = new EasySpotify({
-  token: 'your-token-here'
-});
-
-// search for artists
-spotify.searchArtists('Incubus').then(data => {
-  // do something with the data
-});
+`terminal`
+```sh
+$ npm install node-fetch easy-spotify --save
 ```
-
-### CommonJS
-
+`app.js`
 ```js
+// set node-fetch as global.fetch before anything
+global.fetch = require('node-fetch');
+// now you can use the library
 const EasySpotify = require('easy-spotify');
-
-const spotify = new EasySpotify({});
-// do something to get a token
-spotify.setToken(token);
-
-// do custom search
-spotify.search('track', 'The Beatles').then(data => {
-  // do somethin with the data
-});
+const spotify = new EasySpotify({token: 'your-token-here'});
 ```
-
 ### Browser
-Import the script
 
+Install [easy-spotify](https://www.npmjs.com/package/easy-spotify) from npm and require it from /dist folder.
+
+`index.html`
 ```html
 <!-- import default version -->
-<script src="spotify-wrapper.umd.js"></script>
+<script src="node_modules/easy-spotify/dist/easy-spotify.umd.js"></script>
 <!-- or import minified version -->
-<!-- <script src="easy-spotify.umd.min.js"></script> -->
+<!-- <script src="node_modules/easy-spotify/dist/easy-spotify.umd.min.js"></script> -->
+<!-- import your js file -->
+<script src="js/app.js"></script>
 ```
 
+`app.js`
 ```js
-const spotify = new EasySpotify({});
-// do something to get a token
-spotify.setToken(token);
-
-// get an album
-spotify.getAlbum('album-id').then(data => {
-  // do somethin with the data
-});
+const easySpotify = new EasySpotify({token: 'your-token-here'})
 ```
+
+### Examples
+To see examples, refer to the [examples folder](https://github.com/bruno-lombardi/easy-spotify/tree/master/examples).
 
 ## Methods
 
-This library is still in development (as the documentation), but you can see every method if you use VSCode or other text editor that supports JSDoc.
+This library is still in development (so as the documentation), but all methods are documented in JSDoc format. If your editor support [JSDoc](http://usejsdoc.org/), then you can see type information and all methods for EasySpotify object.
 
 ## Built With
 
 * [Webpack](https://webpack.js.org/)
 * [VSCode](https://code.visualstudio.com/)
 
-## Ideas to Implement
+## Features to implement
 - [ ] Add configurations to paginate some requests, like getAlbums, search, searchTracks
 - [ ] Support Artists endpoints
 - [ ] Support Browse endpoints
