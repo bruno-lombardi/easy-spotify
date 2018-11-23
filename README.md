@@ -61,15 +61,16 @@ To see examples, refer to the [examples folder](https://github.com/bruno-lombard
 
 ### getAlbum(id)
 
-|||
-|-|-|
-|Description|Get an album with provided id|
-|Endpoint|https://api.spotify.com/v1/albums/{id}|
+| | |
+| ---| --- |
+| Description | Get an album with provided id |
+| Endpoint | https://api.spotify.com/v1/albums/{id} |
 
 **Arguments**
-|Argument|Type|Example|
-|-|-|-|
-|`id`|*string*|`'4aawyAB9vmqN3uQ7FjRGTy'`|
+| Argument | Type | Example |
+| --- | --- | --- |
+| `id` | *string* | `'4aawyAB9vmqN3uQ7FjRGTy'` |
+
 **Code Example**
 ```js
 spotify.getAlbum('4aawyAB9vmqN3uQ7FjRGTy').then(data => {
@@ -79,15 +80,16 @@ spotify.getAlbum('4aawyAB9vmqN3uQ7FjRGTy').then(data => {
 
 ### getAlbums(ids)
 
-|||
-|-|-|
-|Description|Get albums with provided ids|
-|Endpoint|https://api.spotify.com/v1/albums?ids={ids}|
+| | |
+| --- | --- |
+| Description | Get albums with provided ids |
+| Endpoint | https://api.spotify.com/v1/albums?ids={ids} |
 
 **Arguments**
-|Argument|Type|Example|
-|-|-|-|
-|`ids`|*Array(string)*|`['382ObEPsp2rxGrnsizN5TX','1A2GTWGtFfWp7KSQTwWOyo']`|
+| Argument | Type | Example |
+| --- | --- | --- |
+| `ids` | *Array(string)* | `['382ObEPsp2rxGrnsizN5TX','1A2GTWGtFfWp7KSQTwWOyo']` |
+
 **Code Example**
 ```js
 spotify.getAlbums(['382ObEPsp2rxGrnsizN5TX','1A2GTWGtFfWp7KSQTwWOyo']).then(data => {
@@ -97,15 +99,16 @@ spotify.getAlbums(['382ObEPsp2rxGrnsizN5TX','1A2GTWGtFfWp7KSQTwWOyo']).then(data
 
 ### getAlbumTracks(id)
 
-|||
-|-|-|
-|Description|Get album tracks with provided id|
-|Endpoint|https://api.spotify.com/v1/albums/{id}/tracks|
+| | |
+| --- | --- |
+| Description | Get album tracks with provided id |
+| Endpoint | https://api.spotify.com/v1/albums/{id}/tracks |
 
 **Arguments**
-|Argument|Type|Example|
-|-|-|-|
-|`id`|*string*|`'382ObEPsp2rxGrnsizN5TX'`|
+| Argument | Type | Example |
+| --- | --- | --- |
+| `id` | *string* | `'382ObEPsp2rxGrnsizN5TX'` |
+
 **Code Example**
 ```js
 spotify.getAlbumTracks('382ObEPsp2rxGrnsizN5TX').then(data => {
