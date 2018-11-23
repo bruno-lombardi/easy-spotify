@@ -49,20 +49,69 @@ Install [easy-spotify](https://www.npmjs.com/package/easy-spotify) from npm and 
 
 `app.js`
 ```js
-const easySpotify = new EasySpotify({token: 'your-token-here'})
+const spotify = new EasySpotify({token: 'your-token-here'})
 ```
 
 ### Examples
 To see examples, refer to the [examples folder](https://github.com/bruno-lombardi/easy-spotify/tree/master/examples).
 
-## Methods
+## Documentation
 
-This library is still in development (so as the documentation), but all methods are documented in JSDoc format. If your editor support [JSDoc](http://usejsdoc.org/), then you can see type information and all methods for EasySpotify object.
+> This library is still in development (so as the documentation). All methods returns a Promise that when fullfilled returns the data from the response body.
 
-## Built With
+### getAlbum(id)
 
-* [Webpack](https://webpack.js.org/)
-* [VSCode](https://code.visualstudio.com/)
+|||
+|-|-|
+|Description|Get an album with provided id|
+|Endpoint|https://api.spotify.com/v1/albums/{id}|
+
+**Arguments**
+|Argument|Type|Example|
+|-|-|-|
+|`id`|*string*|`'4aawyAB9vmqN3uQ7FjRGTy'`|
+**Code Example**
+```js
+spotify.getAlbum('4aawyAB9vmqN3uQ7FjRGTy').then(data => {
+  // do something
+})
+```
+
+### getAlbums(ids)
+
+|||
+|-|-|
+|Description|Get albums with provided ids|
+|Endpoint|https://api.spotify.com/v1/albums?ids={ids}|
+
+**Arguments**
+|Argument|Type|Example|
+|-|-|-|
+|`ids`|*Array(string)*|`['382ObEPsp2rxGrnsizN5TX','1A2GTWGtFfWp7KSQTwWOyo']`|
+**Code Example**
+```js
+spotify.getAlbums(['382ObEPsp2rxGrnsizN5TX','1A2GTWGtFfWp7KSQTwWOyo']).then(data => {
+  // do something
+})
+```
+
+### getAlbumTracks(id)
+
+|||
+|-|-|
+|Description|Get album tracks with provided id|
+|Endpoint|https://api.spotify.com/v1/albums/{id}/tracks|
+
+**Arguments**
+|Argument|Type|Example|
+|-|-|-|
+|`id`|*string*|`'382ObEPsp2rxGrnsizN5TX'`|
+**Code Example**
+```js
+spotify.getAlbumTracks('382ObEPsp2rxGrnsizN5TX').then(data => {
+  // do something
+})
+```
 
 ## Features to implement
 - [ ] Add configurations to paginate some requests, like getAlbums, search, searchTracks
